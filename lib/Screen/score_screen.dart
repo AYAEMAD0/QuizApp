@@ -14,6 +14,8 @@ class ScoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int wrongAnswers = totalQuestions - score;
+
     return Scaffold(
       backgroundColor: background,
       appBar: AppBar(
@@ -36,11 +38,11 @@ class ScoreScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Transform.translate(
-              offset: const Offset(0, -20), 
+              offset: const Offset(0, -20),
               child: Container(
                 padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: nartual,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: ClipRRect(
@@ -70,6 +72,24 @@ class ScoreScreen extends StatelessWidget {
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
                 color: score > (totalQuestions / 2) ? correct : incorrect,
+              ),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              "Correct Answers: $score",
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: correct,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Text(
+              "Wrong Answers: $wrongAnswers",
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: incorrect,
               ),
             ),
             const SizedBox(height: 40),
