@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String? _selectedAnswer;
   Timer? _timer;
   List<Question> questionsList = [];
-  bool isLoading = true; 
+  bool isLoading = true;
 
   @override
   void initState() {
@@ -127,8 +127,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: isLoading
           ? const Center(
-              child:
-                  CircularProgressIndicator())
+              child: CircularProgressIndicator(
+              color: Colors.white,
+              backgroundColor: Colors.transparent,
+            ))
           : Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(

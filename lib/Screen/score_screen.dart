@@ -49,14 +49,14 @@ class ScoreScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                   child: Image.asset(
                     score < 5 ? 'images/sad.jpg' : 'images/perfect.jpg',
-                    width: 250,
-                    height: 250,
+                    width: 240,
+                    height: 240,
                     fit: BoxFit.contain,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 10),
             const Text(
               "Your Score",
               style: TextStyle(
